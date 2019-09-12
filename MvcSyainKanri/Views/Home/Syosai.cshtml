@@ -1,0 +1,65 @@
+﻿@model MvcSyainKanri.Models.SyosaiModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Syosai</title>
+    <link rel="stylesheet" href="~/Content/syosai.css" type="text/css" />
+</head>
+<body>
+    <div class="content">
+        ◆ 社員情報
+        @using (Html.BeginForm("index", "Home"))
+        {
+            <table>
+                <tr>
+                    <td rowspan="6" style="border: 1px solid black;">
+                        <img src="../../Content/images/@Model.syosai.Photo" />
+                    </td>
+                    <td>
+                        社員番号 :  @Model.syosai.SyainNo
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Model.syosai.SyainName
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Model.syosai.Seibetsu
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Model.syosai.NyusyaDate.ToLongDateString()  入社
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @(Model.syosai.Kihonkyu.ToString("c"))
+                    </td>
+                </tr>
+                <tr>
+                    @if(Model.syosai.Taisyoku){
+                        <td>
+                            "退職"
+                        </td>
+                    }
+
+                </tr>
+                <tr>  
+                        <td><input id="btnCart" type="submit" value="戻る" /></td>
+
+                </tr>
+            </table>
+        }
+    </div>
+</body>
+</html>

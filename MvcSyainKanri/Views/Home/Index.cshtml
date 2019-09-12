@@ -1,0 +1,53 @@
+﻿@model MvcSyainKanri.Models.IndexModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/Content/index.css" type="text/css" />
+</head>
+<body>
+    <div class="content">
+        @using (Html.BeginForm())
+        {
+            <text>◆ 資格一覧</text>
+            <table>
+                @foreach (DataRow row in Model.ListShikaku.Rows)
+                {
+                    <tr>
+                        <td>
+                            @Html.ActionLink(row["ShikakuName"].ToString(), "selectShikaku", new { shikakuName = row["ShikakuName"] })
+                        </td>
+                    </tr>
+                }
+            </table>
+            <text>◆ 取得社員の   一覧</text>
+
+            if (Model.ListSyutokuSyain != null)
+            {
+                <table>
+                    @foreach (DataRow row in Model.ListSyutokuSyain.Rows)
+                    {
+                        <tr>
+                            <td>
+                                @Html.ActionLink(row["SyainName"].ToString(), "SelectSyosai", new { syainName = row["SyainName"] })
+                                <br />
+                                @Html.ActionLink(row["SyutokuYM"].ToString(), "SelectSyosai", new { syainName = row["SyainName"] })
+                            </td>
+
+                        </tr>
+                    }
+                </table>
+            }
+        }
+    </div>
+</body>
+</html>
+

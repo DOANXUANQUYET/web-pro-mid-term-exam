@@ -1,0 +1,20 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+}
+
+.content .linkbutton{
+    text-decoration: none;
+    width: 319px;
+    text-align: center;
+    padding: 2px;
+}
+
+
+.contentSmall {
+    text-decoration: none;
+    width: 200px;
+    text-align: center;
+    border: 1px solid black;
+    padding: 2px;
+}

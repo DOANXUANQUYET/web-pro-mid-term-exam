@@ -1,0 +1,16 @@
+﻿.content {
+    padding: 6px;
+    border: 1px solid black;
+    width: 360px;
+}
+
+table {
+    border: 2px solid black;
+    width: 100%;
+}
+
+    table td {
+        border-bottom: 1px solid #191718;
+        padding: 2px 0;
+    }
+
